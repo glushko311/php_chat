@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>Да здравствует русский чат - самый гуманый чат в мире!</h3>
+    <div class="row">
+        <div class="col-md-7 message_field" style = "
+									height: 50vh;
+									border: 2px solid #777;
+									overflow-y: scroll;
+									border-radius: 4px;
+									overflow-x: auto;
+								">
+            <?= getChatArray('chat.txt') ?>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4>Добро пожаловать <?= $regInfo ?></h4>
+            <form role="form" method="POST" action="regHandler2.php">
+                <div class="form-group">
+                    <input class="form-control" name="userLogin" type="hidden" placeholder="Логин" value="<?=$_SESSION['success']?>" required />
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" name="email"  type="hidden" placeholder="Ваша почта" required value="<?=$_SESSION['email']?>" />
+                </div>
+
+                <textarea name="about" class="form-control" id="about_text_area1" rows="3" placeholder="Ваше сообщение"></textarea><br/>
+                <button type="submit" class="btn btn-default">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
